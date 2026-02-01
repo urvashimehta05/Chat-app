@@ -3,7 +3,7 @@ import { api } from "./api";
 import { io } from "socket.io-client";
 import "./App.css";
 import Linkify from "linkify-react";
-const socket = io("http://localhost:5000");
+const socket = io(import.meta.env.VITE_API_URL);
 
 export default function App() {
   const [status, setStatus] = useState("loading...");
