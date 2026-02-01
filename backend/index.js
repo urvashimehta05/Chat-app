@@ -11,7 +11,7 @@ import chatRoutes from "./routes/chatRoutes.js";
 
 const app = express();
 const server = http.createServer(app);
-
+const port = process.env.PORT
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(express.json());
 
@@ -41,8 +41,8 @@ const start = async () => {
   await connectDB();
   startWhatsApp(io);
 
-  server.listen(5000, () => {
-    console.log("🚀 Backend running on http://localhost:5000");
+  server.listen(port, () => {
+    console.log(" Backend running on http://localhost:5000");
   });
 };
 
