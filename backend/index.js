@@ -13,14 +13,14 @@ const app = express();
 const server = http.createServer(app);
 const port = process.env.PORT ||   5000;
 app.use(cors({
-  origin: "https://chat-app-2-e5d4.onrender.com/",
+  origin: "https://chat-app-2-e5d4.onrender.com",
   credentials: true
 }));
 app.use(express.json());
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-app-2-e5d4.onrender.com/",
+    origin: "https://chat-app-2-e5d4.onrender.com",
     credentials: true
   }
 });
