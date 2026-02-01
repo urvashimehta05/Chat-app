@@ -12,11 +12,17 @@ import chatRoutes from "./routes/chatRoutes.js";
 const app = express();
 const server = http.createServer(app);
 const port = process.env.PORT
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({
+  origin: "https://your-frontend.vercel.app",
+  credentials: true
+}));
 app.use(express.json());
 
 const io = new Server(server, {
-  cors: { origin: "http://localhost:5173", credentials: true },
+  cors: {
+    origin: "https://your-frontend.vercel.app",
+    credentials: true
+  }
 });
 
 /* ✅ ADD THIS PART */
